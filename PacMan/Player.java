@@ -1,14 +1,35 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 public class Player extends Actor
 {
-    private int speed = 3;  // Set the speed of the player
+    private int speed = 3; 
 
-    // Load the images for each direction
-    private GreenfootImage imageUp = new GreenfootImage("image1x4.png");
-    private GreenfootImage imageDown = new GreenfootImage("image1x1.png");
-    private GreenfootImage imageLeft = new GreenfootImage("image1x2.png");
-    private GreenfootImage imageRight = new GreenfootImage("image1x3.png");
+    private GreenfootImage imageUp;
+    private GreenfootImage imageDown;
+    private GreenfootImage imageLeft;
+    private GreenfootImage imageRight;
+
+    public Player()
+    {
+        imageUp = new GreenfootImage("image1x4.png");
+        imageDown = new GreenfootImage("image1x1.png");
+        imageLeft = new GreenfootImage("image1x2.png");
+        imageRight = new GreenfootImage("image1x3.png");
+
+        scaleImage(imageUp);
+        scaleImage(imageDown);
+        scaleImage(imageLeft);
+        scaleImage(imageRight);
+
+        setImage(imageUp);
+    }
+
+    private void scaleImage(GreenfootImage image)
+    {
+        int newWidth = image.getWidth() * 50 / 100;
+        int newHeight = image.getHeight() * 50 / 100;
+        image.scale(newWidth, newHeight);
+    }
 
     public void act() 
     {
