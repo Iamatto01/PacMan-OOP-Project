@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=SmallSolidBlock
+comment1.params=
+comment1.target=SmallSolidBlock()
+comment2.params=image
+comment2.target=void\ scaleImage(greenfoot.GreenfootImage)
+comment3.params=
+comment3.target=void\ act()
+numComments=4
