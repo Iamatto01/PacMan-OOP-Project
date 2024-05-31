@@ -46,8 +46,8 @@ public class Player extends Actor
 
     private void scaleImage(GreenfootImage image)
     {
-        int newWidth = image.getWidth() *  35/ 100;
-        int newHeight = image.getHeight() * 35 / 100;
+        int newWidth = image.getWidth() *  30/ 100;
+        int newHeight = image.getHeight() * 30 / 100;
         image.scale(newWidth, newHeight);
     }
 
@@ -66,6 +66,10 @@ public class Player extends Actor
             else 
             currentImage++;
             setImage(imageRight[currentImage]);
+             if (isTouching(SolidBlock.class)) {
+            setLocation(getX() - speed, getY() );}
+            if (isTouching(SmallSolidBlock.class)) {
+            setLocation(getX() - speed, getY() );}
         }
         if(Greenfoot.isKeyDown("left")) 
         {
@@ -75,6 +79,10 @@ public class Player extends Actor
             else 
             currentImage++;
             setImage(imageLeft[currentImage]);
+             if (isTouching(SolidBlock.class)) {
+            setLocation(getX() + speed, getY() );}
+                if (isTouching(SmallSolidBlock.class)) {
+            setLocation(getX() + speed, getY() );}
         }
         if(Greenfoot.isKeyDown("down")) 
         {
@@ -84,6 +92,10 @@ public class Player extends Actor
             else 
             currentImage++;
             setImage(imageDown[currentImage]);
+             if (isTouching(SolidBlock.class)) {
+            setLocation(getX() , getY() - speed);}
+              if (isTouching(SmallSolidBlock.class)) {
+            setLocation(getX() , getY() - speed);}
         }
         if(Greenfoot.isKeyDown("up")) 
         {
@@ -93,6 +105,11 @@ public class Player extends Actor
             else 
             currentImage++;
             setImage(imageUp[currentImage]);
+             if (isTouching(SolidBlock.class)) {
+            setLocation(getX(), getY() + speed);}
+             if (isTouching(SmallSolidBlock.class)) {
+            setLocation(getX(), getY() + speed);}
         }
+      
     }
 }
